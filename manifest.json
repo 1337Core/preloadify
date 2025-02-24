@@ -7,8 +7,8 @@
     "name": "Noah Becker",
     "url": "https://noahbecker.xyz"
   },
-  "description": "Load webpages faster by preloading subsequent pages via the instant.page script. Install the plugin and you will feel how your browser becomes faster. This is a maintained fork of Simon Frey's original extension.",
-  "homepage_url": "https://github.com/1337Core/faster-pageload",
+  "description": "Preloadify uses preloading to to make the web faster. It preloads links on mouse hover and makes them instantly available when you click them. This way, you can navigate faster through the web. This is based on Simon Frey's original extension.",
+  "homepage_url": "https://github.com/1337Core/preloadify",
 
   "icons": {
     "48": "icons/rocket.svg",
