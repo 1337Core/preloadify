@@ -4,4 +4,4 @@ Preloadify uses preloading to to make the web faster. It preloads links on mouse
 
 ## Credits:
 - Based on the extension developed by Simon Frey (https://simon-frey.eu)
-- Instant.page script by Alexandre Dieulot (https://dieulot.fr/) - licensed under the MIT license (https://opensource.org/licenses/MIT)
+- Instant.page script by Alexandre Dieulot (https://dieulot.fr) - licensed under the MIT license (https://opensource.org/licenses/MIT)
