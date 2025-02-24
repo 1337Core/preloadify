@@ -1,11 +1,11 @@
 {
   "manifest_version": 2,
-  "name": "Faster Pageload",
-  "version": "2.0.0",
-  "author": "1337Core (Maintained fork)",
+  "name": "Preloadify",
+  "version": "1.0.0",
+  "author": "1337Core",
   "developer": {
-    "name": "1337Core",
-    "url": "https://github.com/1337Core"
+    "name": "Noah Becker",
+    "url": "https://noahbecker.xyz"
   },
   "description": "Load webpages faster by preloading subsequent pages via the instant.page script. Install the plugin and you will feel how your browser becomes faster. This is a maintained fork of Simon Frey's original extension.",
   "homepage_url": "https://github.com/1337Core/faster-pageload",
