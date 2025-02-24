@@ -1,0 +1,46 @@
+{
+  "manifest_version": 2,
+  "name": "Faster Pageload",
+  "version": "2.0.0",
+  "author": "1337Core (Maintained fork)",
+  "developer": {
+    "name": "1337Core",
+    "url": "https://github.com/1337Core"
+  },
+  "description": "Load webpages faster by preloading subsequent pages via the instant.page script. Install the plugin and you will feel how your browser becomes faster. This is a maintained fork of Simon Frey's original extension.",
+  "homepage_url": "https://github.com/1337Core/faster-pageload",
+
+  "icons": {
+    "48": "icons/rocket.svg",
+    "96": "icons/rocket.svg"
+  },
+  "options_ui": { 
+    "page": "options.html"
+  },
+
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{73c0257e-a620-4c48-a2a8-2a9e8481a0d4}"
+    }
+  },
+
+  "web_accessible_resources": ["static/*"],
+  "browser_action": {
+    "default_icon":  "icons/rocket.svg",
+    "default_title": "Faster Pageload"
+  },
+
+  "permissions": ["storage",
+    "webRequest",
+    "<all_urls>",
+  "webRequestBlocking"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/instant_page.min.js", "js/lazy_images.js"]
+    }
+  ]
+}
