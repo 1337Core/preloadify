@@ -1,3 +1,5 @@
+## Preloadify
+
 Preloadify uses preloading to to make the web faster. It preloads links on mouse hover and makes them instantly available when you click them. This way, you can navigate faster and more efficiently.
 
 ## Maintenance Notice
