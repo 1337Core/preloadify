@@ -20,17 +20,27 @@ jobs:
 
       - name: Create zip file
         run: |
-          zip -r faster-pageload-${{ steps.date.outputs.date }}.zip . -x ".git/*" ".github/*"
+          zip -r faster-pageload-latest.zip . -x ".git/*" ".github/*"
+
+      - name: Delete existing dev release
+        uses: dev-drprasad/delete-tag-and-release@v0.2.1
+        with:
+          tag_name: dev-release
+          delete_release: true
+          repo: ${{ github.repository }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
 
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: dev-${{ steps.date.outputs.date }}
-          name: Development Release ${{ steps.date.outputs.date }}
+          tag_name: dev-release
+          name: Development Release (Updated ${{ steps.date.outputs.date }})
           body: |
             Automatic development release from main branch
-            Date: ${{ steps.date.outputs.date }}
+            Last Updated: ${{ steps.date.outputs.date }}
           draft: false
           prerelease: true
-          files: faster-pageload-${{ steps.date.outputs.date }}.zip
+          files: faster-pageload-latest.zip
