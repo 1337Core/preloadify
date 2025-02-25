@@ -20,7 +20,7 @@ jobs:
 
       - name: Create zip file
         run: |
-          zip -r faster-pageload-latest.zip . -x ".git/*" ".github/*"
+          zip -r preloadify-latest.zip . -x ".git/*" ".github/*"
 
       - name: Delete existing dev release
         uses: dev-drprasad/delete-tag-and-release@v0.2.1
@@ -41,6 +41,10 @@ jobs:
           body: |
             Automatic development release from main branch
             Last Updated: ${{ steps.date.outputs.date }}
+            
+            
+            To download use preloadify-latest.zip
           draft: false
           prerelease: true
-          files: faster-pageload-latest.zip
+          files: preloadify-latest.zip
+          generate_release_notes: true
