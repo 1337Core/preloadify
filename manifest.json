@@ -1,13 +1,13 @@
 {
   "manifest_version": 2,
   "name": "Preloadify",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Noah Becker",
   "developer": {
     "name": "Noah Becker",
     "url": "https://noahbecker.xyz"
   },
-  "description": "Preloadify uses preloading to make the web faster. It preloads links on mouse hover and makes them instantly available when you click them. This way, you can navigate faster through the web. This is based on Simon Frey's original extension.",
+  "description": "Preloadify uses preloading to make the web faster. It preloads links on mouse hover and makes them instantly available when you click them. This way, you can navigate faster through the web. This based on Simon Frey's Faster Pageload extension.",
   "homepage_url": "https://github.com/1337Core/preloadify",
 
   "icons": {
@@ -23,7 +23,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "{73c0257e-a620-4c48-a2a8-2a9e8481a0d4}"
+      "id": "{25b56640-4c45-4a50-b105-9d6e1d8baf83}"
     }
   },
 
