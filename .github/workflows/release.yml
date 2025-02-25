@@ -1,0 +1,36 @@
+name: Automatic Dev Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      - name: Create zip file
+        run: |
+          zip -r faster-pageload-${{ steps.date.outputs.date }}.zip . -x ".git/*" ".github/*"
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: dev-${{ steps.date.outputs.date }}
+          name: Development Release ${{ steps.date.outputs.date }}
+          body: |
+            Automatic development release from main branch
+            Date: ${{ steps.date.outputs.date }}
+          draft: false
+          prerelease: true
+          files: faster-pageload-${{ steps.date.outputs.date }}.zip
