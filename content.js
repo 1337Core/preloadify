@@ -1,4 +1,4 @@
-// This is an alternative approach using a content script
+// This is an alternative approach using a content script that i might use later as fallback
 
 if (!document.querySelector('script[src*="instant.page"]')) {
   const script = document.createElement("script")
