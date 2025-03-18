@@ -6,5 +6,5 @@ For more information, I suggest reading [this.](https://getquick.link/approach)
 
 ## Credits:
 - This is [inspired by the extension developed by Simon Frey](https://github.com/simonfrey/faster-pageload-web-extensions)
-- [Instant.page script by Alexandre Dieulot](https://dieulot.fr) - licensed under the [MIT license](https://opensource.org/licenses/MIT)
+- [Instant.page script by Alexandre Dieulot](https://dieulot.fr)
 - [Speed icon](https://www.flaticon.com/free-icons/speed "speed icon") created by alkhalifi design - Flaticon
