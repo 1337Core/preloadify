@@ -1,4 +1,3 @@
-// Use a cross-browser API wrapper
 const browserAPI = typeof browser !== "undefined" ? browser : chrome
 
 document.addEventListener("DOMContentLoaded", () => {
