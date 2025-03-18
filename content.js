@@ -1,7 +1,5 @@
 // This is an alternative approach using a content script
-// This file would need to be referenced in the manifest.json if used
 
-// Check if the script is already injected
 if (!document.querySelector('script[src*="instant.page"]')) {
   const script = document.createElement("script")
   script.src = "//instant.page/5.2.0"
