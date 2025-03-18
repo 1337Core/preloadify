@@ -1,4 +1,3 @@
-// Use a cross-browser API wrapper to support both Chrome and Firefox
 const browserAPI = typeof browser !== "undefined" ? browser : chrome
 
 // This script runs in the background and injects the instant.page script
