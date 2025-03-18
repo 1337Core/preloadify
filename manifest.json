@@ -1,46 +1,36 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Preloadify",
-  "version": "1.1.1",
-  "author": "Noah Becker",
-  "developer": {
-    "name": "Noah Becker",
-    "url": "https://noahbecker.xyz"
-  },
-  "description": "Preloadify uses preloading to make the web faster. It preloads links on mouse hover and makes them instantly available when you click them. This way, you can navigate faster through the web. This based on Simon Frey's Faster Pageload extension.",
-  "homepage_url": "https://github.com/1337Core/preloadify",
-
-  "icons": {
-    "48": "icons/rocket.svg",
-    "96": "icons/rocket.svg"
-  },
-  "options_ui": {
-    "page": "options.html"
-  },
-
+  "version": "1.0.0",
+  "description": "Injects instant.page script to make page navigation feel faster by preloading pages on hover.",
+  "permissions": ["scripting", "storage"],
+  "host_permissions": ["<all_urls>"],
   "background": {
-    "scripts": ["js/background.js"]
+    "service_worker": "background.js"
   },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Preloadify",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "author": "Noah Becker",
+  "homepage_url": "https://noahbecker.dev",
   "browser_specific_settings": {
     "gecko": {
-      "id": "{e5de2393-6c71-4f74-9e27-5a8cf7f03a20}"
+      "id": "preloadify@icloud.com",
+      "strict_min_version": "109.0"
     }
-  },
-
-  "web_accessible_resources": ["static/*"],
-  "browser_action": {
-    "default_icon":  "icons/rocket.svg",
-    "default_title": "Faster Pageload"
-  },
-
-  "permissions": ["storage",
-    "webRequest",
-    "<all_urls>",
-  "webRequestBlocking"],
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["js/instant_page.min.js", "js/lazy_images.js"]
-    }
-  ]
+  }
 }
+
