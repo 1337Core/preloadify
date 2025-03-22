@@ -8,7 +8,7 @@ Preloadify is a browser extension that enhances your web browsing experience by 
 - **Lightweight**: Minimal impact on browser performance as it loads the instant.io script from Cloudflare edge servers.
 
 ### Installation
-1. Download the Preloadify extension zip file from the [releases page](#).
+1. Download the Preloadify extension zip file from the [releases page](https://github.com/1337Core/preloadify/releases).
 2. Extract the zip file to a folder on your computer.
 3. Open Chrome and navigate to `chrome://extensions/`.
 4. Enable "Developer mode" by toggling the switch in the top right corner.
