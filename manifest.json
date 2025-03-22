@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Preloadify",
   "version": "1.0.0",
-  "description": "Injects instant.page script to make page navigation feel faster by preloading pages on hover.",
+  "description": "Injects instant.page script to make page navigation feel faster by preloading links on hover.",
   "permissions": ["scripting", "storage"],
   "host_permissions": ["<all_urls>"],
   "background": {
