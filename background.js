@@ -1,19 +1,23 @@
 const browserAPI = typeof browser !== "undefined" ? browser : chrome
 
 // This script runs in the background and injects the instant.page script
-// into every page the user visits
 browserAPI.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  // Only run when the page is fully loaded
   if (changeInfo.status === "complete" && tab.url && tab.url.startsWith("http")) {
-    // Execute a content script that injects the instant.page script
-    browserAPI.scripting
-      .executeScript({
-        target: { tabId: tabId },
-        function: injectInstantPage,
-      })
-      .catch((error) => {
-        console.error("Error injecting script:", error)
-      })
+    // Check state
+    browserAPI.storage.local.get(["enabled"], (result) => {
+      if (result.enabled !== false) {
+        browserAPI.scripting
+          .executeScript({
+            target: { tabId: tabId },
+            function: injectInstantPage,
+          })
+          .catch((error) => {
+            if (!error.message.includes("Cannot access contents of url") && !error.message.includes("The tab was closed")) {
+              console.error("Preloadify - Error injecting script:", error)
+            }
+          })
+      }
+    })
   }
 })
 
