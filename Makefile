@@ -1,6 +1,6 @@
-.PHONY: store 
+.PHONY: zip 
 
-store:
+zip:
 	@echo "Packaging zip..."
 	@zip preloadify.zip * -r
 	@echo "Build completed."

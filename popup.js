@@ -1,7 +1,7 @@
 const browserAPI = typeof browser !== "undefined" ? browser : chrome
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Handle privacy policy link
+  // privacy link
   document.getElementById("privacyLink").addEventListener("click", (e) => {
     e.preventDefault()
     browserAPI.tabs.create({ url: browserAPI.runtime.getURL("privacy-policy.html") })
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleSwitch = document.getElementById("toggleExtension")
   const statusText = document.getElementById("status")
 
-  // Load saved state
+  // load state
   browserAPI.storage.local.get(["enabled"], (result) => {
     if (result.enabled === false) {
       toggleSwitch.checked = false
@@ -19,14 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
-  // Handle toggle changes
+  // handle toggle
   toggleSwitch.addEventListener("change", () => {
     const isEnabled = toggleSwitch.checked
 
-    // Save state
+    // save state
     browserAPI.storage.local.set({ enabled: isEnabled })
 
-    // Update UI
+    // update ui
     if (isEnabled) {
       statusText.textContent = "Active"
       statusText.style.color = "#4CAF50"

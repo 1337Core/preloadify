@@ -5,9 +5,9 @@ Preloadify is a browser extension that enhances your web browsing experience by 
 ### Features
 - **Instant Page Loading**: Preloads links when you hover over them, making them instantly available when you click.
 - **Seamless Integration**: Works with all websites without any additional configuration.
-- **Lightweight**: Minimal impact on browser performance as it loads the instant.io script from Cloudflare edge servers.
+- **Lightweight**: Minimal impact on browser performance as it uses the lightweight instant.page script locally.
 
-### Installation
+### Installation (Chrome)
 1. Download the Preloadify extension zip file from the [releases page](https://github.com/1337Core/preloadify/releases).
 2. Extract the zip file to a folder on your computer.
 3. Open Chrome and navigate to `chrome://extensions/`.
@@ -22,7 +22,7 @@ Preloadify is a browser extension that enhances your web browsing experience by 
 ### Credits
 - This extension is [inspired by the extension developed by Simon Frey](https://github.com/simonfrey/faster-pageload-web-extensions).
 - [Instant.page script by Alexandre Dieulot](https://dieulot.fr).
-- [Speed icon](https://www.flaticon.com/free-icons/speed "speed icon") created by alkhalifi design - Flaticon.
+- [Speed icon](https://www.flaticon.com/free-icons/rocket) Rocket icon created by Pixel perfect - Flaticon.
 
 ### License
-MIT License
+MIT License.

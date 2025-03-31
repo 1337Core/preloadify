@@ -1,13 +1,20 @@
 {
   "manifest_version": 3,
   "name": "Preloadify",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Injects instant.page script to make page navigation feel faster by preloading links on hover.",
-  "permissions": ["scripting", "storage"],
+  "permissions": ["storage"],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
   },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
   "action": {
     "default_icon": {
       "16": "icons/icon16.png",
@@ -24,6 +31,12 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
+  "web_accessible_resources": [
+    {
+      "resources": ["vendor/instantpage.min.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
   "author": "Noah Becker",
   "homepage_url": "https://noahbecker.dev",
   "browser_specific_settings": {
@@ -33,4 +46,3 @@
     }
   }
 }
-
