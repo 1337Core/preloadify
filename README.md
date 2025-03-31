@@ -7,7 +7,7 @@ Preloadify is a browser extension that enhances your web browsing experience by 
 - **Seamless Integration**: Works with all websites without any additional configuration.
 - **Lightweight**: Minimal impact on browser performance as it uses the lightweight instant.page script locally.
 
-### Installation (Chrome only for now)
+### Installation (Chromium only for now)
 1. Download the Preloadify extension zip file from the [releases page](https://github.com/1337Core/preloadify/releases).
 2. Extract the zip file to a folder on your computer.
 3. Open Chrome and navigate to `chrome://extensions/`.
