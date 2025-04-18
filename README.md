@@ -22,7 +22,7 @@ Preloadify is a browser extension that enhances your web browsing experience by 
 ### Credits
 - This extension is [inspired by the extension developed by Simon Frey](https://github.com/simonfrey/faster-pageload-web-extensions)
 - [Instant.page script by Alexandre Dieulot](https://dieulot.fr)
-- [Speed icon](https://www.flaticon.com/free-icons/rocket) Rocket icon created by Pixel perfect - Flaticon.
+- [Rocket icon](https://www.flaticon.com/free-icons/rocket) created by Pixel perfect - Flaticon.
 
 ### License
 MIT License.
