@@ -1,6 +1,10 @@
 ## Preloadify
 
-Preloadify is a browser extension that enhances your web browsing experience by preloading links on mouse hover. This makes web navigation feel faster.
+Preloadify is a browser extension that enhances your web browsing experience by preloading links on mouse hover. This makes the web feel faster.
+
+<p align="center">
+  <img src="screenshots/ss.png" width="400" alt="Preloadify Screenshot">
+</p>
 
 ### Features
 - **Instant Page Loading**: Preloads links when you hover over them, making them instantly available when you click.
@@ -13,7 +17,7 @@ Preloadify is a browser extension that enhances your web browsing experience by 
 3. Open Chrome and navigate to `chrome://extensions`
 4. Enable "Developer mode" by toggling the switch in the top right corner.
 5. Click on "Load unpacked" and select the extracted Preloadify extension folder.
-6. The extension should now be installed and active.
+6. The extension should now be installed and active!
 
 ### Usage
 - Once installed, Preloadify will automatically start preloading links on hover.
