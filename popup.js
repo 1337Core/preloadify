@@ -1,12 +1,6 @@
 const browserAPI = typeof browser !== "undefined" ? browser : chrome
 
 document.addEventListener("DOMContentLoaded", () => {
-  // privacy link
-  document.getElementById("privacyLink").addEventListener("click", (e) => {
-    e.preventDefault()
-    browserAPI.tabs.create({ url: browserAPI.runtime.getURL("privacy-policy.html") })
-  })
-
   const toggleSwitch = document.getElementById("toggleExtension")
   const statusText = document.getElementById("status")
 

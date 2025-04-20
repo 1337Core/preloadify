@@ -20,7 +20,7 @@ body {
   margin-bottom: 15px;
 }
 
-.privacy-link {
+.github-link {
   color: #666;
   font-size: 12px;
   text-decoration: none;
@@ -28,7 +28,7 @@ body {
   margin-bottom: 15px;
 }
 
-.privacy-link:hover {
+.github-link:hover {
   text-decoration: underline;
 }
 
