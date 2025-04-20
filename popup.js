@@ -3,14 +3,25 @@ const browserAPI = typeof browser !== "undefined" ? browser : chrome
 document.addEventListener("DOMContentLoaded", () => {
   const toggleSwitch = document.getElementById("toggleExtension")
   const statusText = document.getElementById("status")
-
+  const slider = document.querySelector(".slider")
+  
+  slider.classList.add("no-transition")
+  
   // load state
   browserAPI.storage.local.get(["enabled"], (result) => {
-    if (result.enabled === false) {
+    if (result.enabled !== false) {
+      toggleSwitch.checked = true
+      statusText.textContent = "Active"
+      statusText.style.color = "#4CAF50"
+    } else {
       toggleSwitch.checked = false
       statusText.textContent = "Disabled"
       statusText.style.color = "#F44336"
     }
+    
+    setTimeout(() => {
+      slider.classList.remove("no-transition")
+    }, 50)
   })
 
   // handle toggle
