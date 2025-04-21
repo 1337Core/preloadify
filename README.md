@@ -24,8 +24,8 @@ Preloadify is a browser extension that enhances your web browsing experience by 
 - You can manage the extension by clicking the extension icon in the extension menu.
 
 ### Credits
-- This extension is [inspired by the extension developed by Simon Frey](https://github.com/simonfrey/faster-pageload-web-extensions)
-- [Instant.page script by Alexandre Dieulot](https://dieulot.fr)
+- This extension is [inspired by the extension developed by Simon Frey.](https://github.com/simonfrey/faster-pageload-web-extensions)
+- [Instant.page script by Alexandre Dieulot.](https://dieulot.fr)
 - [Rocket icon](https://www.flaticon.com/free-icons/rocket) created by Pixel Perfect - Flaticon.
 
 ### License
