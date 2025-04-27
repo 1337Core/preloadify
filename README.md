@@ -6,14 +6,6 @@ Preloadify is a browser extension that makes your web browsing feel faster by pr
   <img src="screenshots/ss.png" width="400" alt="Preloadify Screenshot">
 </p>
 
-## Table of Contents
-
-- [Features](#features)
-- [Installation](#installation-chromium-based-browsers)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-
 ### Features
 - **Instant Page Loading**: Preloads links when you hover over them, making them instantly available when you click.
 - **Seamless Integration**: Works with all websites without any additional configuration.
