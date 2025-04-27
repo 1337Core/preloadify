@@ -4,6 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleSwitch = document.getElementById("toggleExtension")
   const statusText = document.getElementById("status")
   const slider = document.querySelector(".slider")
+
+  // display extension version
+  const versionElem = document.getElementById("version")
+  const manifest = browserAPI.runtime.getManifest()
+  if (versionElem) versionElem.textContent = manifest.version
   
   slider.classList.add("no-transition")
   
@@ -11,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   browserAPI.storage.local.get(["enabled"], (result) => {
     if (result.enabled !== false) {
       toggleSwitch.checked = true
-      statusText.textContent = "Active"
+      statusText.textContent = "Enabled"
       statusText.style.color = "#4CAF50"
     } else {
       toggleSwitch.checked = false
@@ -33,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // update ui
     if (isEnabled) {
-      statusText.textContent = "Active"
+      statusText.textContent = "Enabled"
       statusText.style.color = "#4CAF50"
     } else {
       statusText.textContent = "Disabled"

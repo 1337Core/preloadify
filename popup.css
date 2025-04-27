@@ -124,7 +124,7 @@ input:checked + .slider:before {
 
 #status {
   font-weight: bold;
-  color: #4caf50;
+  color: #4CAF50;
 }
 
 .no-transition {

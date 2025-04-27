@@ -1,4 +1,4 @@
-## Preloadify
+# Preloadify
 
 Preloadify is a browser extension that makes your web browsing feel faster by preloading links when you hover over them.
 
@@ -6,12 +6,23 @@ Preloadify is a browser extension that makes your web browsing feel faster by pr
   <img src="screenshots/ss.png" width="400" alt="Preloadify Screenshot">
 </p>
 
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation-chromium-based-browsers)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+
 ### Features
 - **Instant Page Loading**: Preloads links when you hover over them, making them instantly available when you click.
 - **Seamless Integration**: Works with all websites without any additional configuration.
 - **Lightweight**: Minimal impact on browser performance as it uses the instant.page script locally.
 
-### Installation (Chromium only for now)
+### Installation (Chromium-based browsers)
+
+Currently supported on Chromium-based browsers. Firefox support coming soon.
+
 1. Download the Preloadify extension zip file from the [releases page](https://github.com/1337Core/preloadify/releases)
 2. Extract the zip file to a folder on your computer.
 3. Open Chrome and navigate to `chrome://extensions`
@@ -24,9 +35,9 @@ Preloadify is a browser extension that makes your web browsing feel faster by pr
 - You can manage the extension by clicking the extension icon in the extension menu.
 
 ### Credits
-- This extension is [inspired by the extension developed by Simon Frey.](https://github.com/simonfrey/faster-pageload-web-extensions)
-- [Instant.page script by Alexandre Dieulot.](https://dieulot.fr)
+- This extension is [inspired by the extension developed by Simon Frey](https://github.com/simonfrey/faster-pageload-web-extensions).
+- [Instant.page script by Alexandre Dieulot](https://dieulot.fr).
 - [Rocket icon](https://www.flaticon.com/free-icons/rocket) created by Pixel Perfect - Flaticon.
 
 ### License
-MIT License.
+[MIT License](LICENSE)
