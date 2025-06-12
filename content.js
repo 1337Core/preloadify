@@ -33,7 +33,7 @@ function injectInstantPage() {
   
   // wait for DOM to be ready if not already
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', injectInstantPage);
+    document.addEventListener('DOMContentLoaded', () => injectInstantPage());
     return;
   }
   

@@ -18,18 +18,5 @@ chrome.runtime.onInstalled.addListener(() => {
   });
 });
 
-// toggle state on icon click
-chrome.action.onClicked.addListener(() => {
-  chrome.storage.local.get(["enabled"], (result) => {
-    if (chrome.runtime.lastError) {
-      console.error('Error getting enabled state:', chrome.runtime.lastError);
-      return;
-    }
-    const newState = !result.enabled;
-    chrome.storage.local.set({ enabled: newState }, () => {
-      if (chrome.runtime.lastError) {
-        console.error('Error setting enabled state:', chrome.runtime.lastError);
-      }
-    });
-  });
-});
+// Note: action.onClicked is not used when popup is defined in manifest
+// Toggle functionality is handled in popup.js instead
