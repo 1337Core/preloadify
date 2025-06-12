@@ -33,7 +33,7 @@ function injectInstantPage() {
   
   // wait for DOM to be ready if not already
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => injectInstantPage());
+    document.addEventListener('DOMContentLoaded', injectInstantPage, { once: true });
     return;
   }
   
@@ -47,15 +47,18 @@ function injectInstantPage() {
     // append to doc
     const target = document.head || document.documentElement;
     if (target) {
-      target.appendChild(script);
-      
       script.onload = function() {
         // console.log("preloadify injected");
       };
       
-      script.onerror = function() {
-        console.error("Failed to load instant.page script");
+      script.onerror = function(event) {
+        console.error("Failed to load instant.page script:", event);
+        if (script.parentNode) {
+          script.parentNode.removeChild(script);
+        }
       };
+      
+      target.appendChild(script);
     } else {
       console.error("No valid target to inject script");
     }
