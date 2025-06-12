@@ -17,6 +17,3 @@ chrome.runtime.onInstalled.addListener(() => {
     }
   });
 });
-
-// Note: action.onClicked is not used when popup is defined in manifest
-// Toggle functionality is handled in popup.js instead
