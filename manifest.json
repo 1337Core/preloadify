@@ -38,11 +38,5 @@
     }
   ],
   "author": "Noah Becker",
-  "homepage_url": "https://noahbecker.dev",
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "preloadify@icloud.com",
-      "strict_min_version": "109.0"
-    }
-  }
+  "homepage_url": "https://noahbecker.dev"
 }

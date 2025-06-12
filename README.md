@@ -13,7 +13,7 @@ Preloadify is a browser extension that makes your web browsing feel faster by pr
 
 ### Installation (Chromium-based browsers)
 
-Currently supported on Chromium-based browsers. Firefox support coming soon.
+Supports Chromium-based browsers (Chrome, Edge, Brave, etc.).
 
 1. Download the Preloadify extension zip file from the [releases page](https://github.com/1337Core/preloadify/releases)
 2. Extract the zip file to a folder on your computer.

@@ -1,19 +1,20 @@
-const browserAPI = typeof browser !== "undefined" ? browser : chrome
-
 document.addEventListener("DOMContentLoaded", () => {
   const toggleSwitch = document.getElementById("toggleExtension")
   const statusText = document.getElementById("status")
   const slider = document.querySelector(".slider")
 
+  // early return if required elements not found
+  if (!toggleSwitch || !statusText || !slider) return
+
   // display extension version
   const versionElem = document.getElementById("version")
-  const manifest = browserAPI.runtime.getManifest()
+  const manifest = chrome.runtime.getManifest()
   if (versionElem) versionElem.textContent = manifest.version
   
   slider.classList.add("no-transition")
   
   // load state
-  browserAPI.storage.local.get(["enabled"], (result) => {
+  chrome.storage.local.get(["enabled"], (result) => {
     if (result.enabled !== false) {
       toggleSwitch.checked = true
       statusText.textContent = "Enabled"
@@ -34,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const isEnabled = toggleSwitch.checked
 
     // save state
-    browserAPI.storage.local.set({ enabled: isEnabled })
+    chrome.storage.local.set({ enabled: isEnabled })
 
     // update ui
     if (isEnabled) {
