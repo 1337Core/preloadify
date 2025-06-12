@@ -4,6 +4,8 @@ body {
   width: 300px;
   padding: 15px;
   margin: 0;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
 }
 
 .container {
@@ -21,7 +23,7 @@ body {
 }
 
 .github-link {
-  color: #666;
+  color: #999;
   font-size: 12px;
   text-decoration: none;
   margin-top: 0;
@@ -36,7 +38,7 @@ h1 {
   font-size: 18px;
   margin-top: 0;
   margin-bottom: 15px;
-  color: #333;
+  color: #f0f0f0;
 }
 
 p {
@@ -46,7 +48,7 @@ p {
 }
 
 .description {
-  color: #666;
+  color: #b0b0b0;
   font-size: 13px;
   line-height: 1.4;
   margin-top: 15px;
@@ -58,7 +60,7 @@ p {
 }
 
 .footer a {
-  color: #0366d6;
+  color: #58a6ff;
   text-decoration: none;
 }
 
@@ -87,7 +89,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #444;
   transition: .4s;
 }
 
@@ -98,12 +100,12 @@ p {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: #f0f0f0;
   transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: #0078d4;
 }
 
 input:focus + .slider {
