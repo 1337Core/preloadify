@@ -15,6 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // load state
   chrome.storage.local.get(["enabled"], (result) => {
+    if (chrome.runtime.lastError) {
+      console.error('Error getting enabled state:', chrome.runtime.lastError);
+      statusText.textContent = "Error"
+      statusText.style.color = "#F44336"
+      return;
+    }
+    
     if (result.enabled !== false) {
       toggleSwitch.checked = true
       statusText.textContent = "Enabled"
@@ -35,16 +42,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const isEnabled = toggleSwitch.checked
 
     // save state
-    chrome.storage.local.set({ enabled: isEnabled })
-
-    // update ui
-    if (isEnabled) {
-      statusText.textContent = "Enabled"
-      statusText.style.color = "#4CAF50"
-    } else {
-      statusText.textContent = "Disabled"
-      statusText.style.color = "#F44336"
-    }
+    chrome.storage.local.set({ enabled: isEnabled }, () => {
+      if (chrome.runtime.lastError) {
+        console.error('Error setting enabled state:', chrome.runtime.lastError);
+        statusText.textContent = "Error"
+        statusText.style.color = "#F44336"
+        // revert toggle state on error
+        toggleSwitch.checked = !isEnabled
+        return;
+      }
+      
+      // update ui only on success
+      if (isEnabled) {
+        statusText.textContent = "Enabled"
+        statusText.style.color = "#4CAF50"
+      } else {
+        statusText.textContent = "Disabled"
+        statusText.style.color = "#F44336"
+      }
+    })
   })
 })
 

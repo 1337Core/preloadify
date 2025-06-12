@@ -2,6 +2,10 @@
 
 // check if enabled
 chrome.storage.local.get(["enabled"], (result) => {
+  if (chrome.runtime.lastError) {
+    console.error('Error getting enabled state:', chrome.runtime.lastError);
+    return;
+  }
   if (result.enabled !== false) {
     injectInstantPage();
   }
@@ -23,7 +27,17 @@ chrome.storage.onChanged.addListener((changes) => {
 // inject instantpage script
 function injectInstantPage() {
   // check if already injected
-  if (!document.querySelector('script[data-preloadify="true"]')) {
+  if (document.querySelector('script[data-preloadify="true"]')) {
+    return;
+  }
+  
+  // wait for DOM to be ready if not already
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', injectInstantPage);
+    return;
+  }
+  
+  try {
     // create script element for local file
     const script = document.createElement("script");
     script.src = chrome.runtime.getURL("vendor/instantpage.min.js");
@@ -31,10 +45,21 @@ function injectInstantPage() {
     script.dataset.preloadify = "true";
     
     // append to doc
-    (document.head || document.documentElement).appendChild(script);
-    
-    script.onload = function() {
-      // console.log("preloadify injected");
-    };
+    const target = document.head || document.documentElement;
+    if (target) {
+      target.appendChild(script);
+      
+      script.onload = function() {
+        // console.log("preloadify injected");
+      };
+      
+      script.onerror = function() {
+        console.error("Failed to load instant.page script");
+      };
+    } else {
+      console.error("No valid target to inject script");
+    }
+  } catch (error) {
+    console.error("Error injecting instant.page script:", error);
   }
 }
