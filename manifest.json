@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Preloadify",
-  "version": "1.5",
+  "version": "1.6",
   "description": "Preloadify preloads links on hover (via instant.page) to make navigation feel instantaneous.",
   "permissions": ["storage"],
   "host_permissions": ["<all_urls>"],
