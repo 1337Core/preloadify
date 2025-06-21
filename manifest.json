@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Preloadify",
   "version": "1.6",
-  "description": "Preloadify preloads links on hover (via instant.page) to make navigation feel instantaneous.",
+  "description": "Preloadify preloads links on hover (via instant.page) to make the web feel faster.",
   "permissions": ["storage"],
   "host_permissions": ["<all_urls>"],
   "background": {
@@ -37,6 +37,6 @@
       "matches": ["<all_urls>"]
     }
   ],
-  "author": "Noah Becker",
-  "homepage_url": "https://noahbecker.dev"
+  "author": "1337Core",
+  "homepage_url": "https://github.com/1337Core/preloadify"
 }
