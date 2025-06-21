@@ -49,6 +49,7 @@ function injectInstantPage() {
     if (target) {
       script.onload = function() {
         // console.log("preloadify injected");
+        setupPreloadTracking();
       };
       
       script.onerror = function(event) {
@@ -65,4 +66,36 @@ function injectInstantPage() {
   } catch (error) {
     console.error("Error injecting instant.page script:", error);
   }
+}
+
+// track preload activity
+function setupPreloadTracking() {
+  // observe for new elements being added (preloads)
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach((node) => {
+        if (node.nodeType === Node.ELEMENT_NODE) {
+          // track speculation rules (modern browsers)
+          if (node.tagName === 'SCRIPT' && node.type === 'speculationrules') {
+            incrementPreloadCounter();
+          }
+          // track prefetch links (fallback)
+          else if (node.tagName === 'LINK' && node.rel === 'prefetch') {
+            incrementPreloadCounter();
+          }
+        }
+      });
+    });
+  });
+  
+  observer.observe(document.head, { childList: true });
+}
+
+function incrementPreloadCounter() {
+  chrome.storage.local.get(["preloadCount"], (result) => {
+    if (chrome.runtime.lastError) return;
+    
+    const currentCount = result.preloadCount || 0;
+    chrome.storage.local.set({ preloadCount: currentCount + 1 });
+  });
 }

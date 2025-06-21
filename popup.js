@@ -2,9 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleSwitch = document.getElementById("toggleExtension")
   const statusText = document.getElementById("status")
   const slider = document.querySelector(".slider")
+  const counterText = document.getElementById("counter")
 
   // early return if required elements not found
-  if (!toggleSwitch || !statusText || !slider) return
+  if (!toggleSwitch || !statusText || !slider || !counterText) return
 
   // display extension version
   const versionElem = document.getElementById("version")
@@ -13,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
   slider.classList.add("no-transition")
   
-  // load state
-  chrome.storage.local.get(["enabled"], (result) => {
+  // load state and counter
+  chrome.storage.local.get(["enabled", "preloadCount"], (result) => {
     if (chrome.runtime.lastError) {
       console.error('Error getting enabled state:', chrome.runtime.lastError);
       statusText.textContent = "Error"
@@ -31,6 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
       statusText.textContent = "Disabled"
       statusText.style.color = "#F44336"
     }
+    
+    // update counter display
+    const count = result.preloadCount || 0
+    counterText.textContent = count.toString()
     
     setTimeout(() => {
       slider.classList.remove("no-transition")
